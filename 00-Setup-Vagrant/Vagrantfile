@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  config.vm.provision "shell", path: "bootstrap.sh"
+
+  # Master Server
+  config.vm.define "terraform" do |terraform|
+    terraform.vm.box = "ubuntu/xenial64"
+    terraform.vm.hostname = "terraform.example.com"
+    terraform.vm.network "private_network", ip: "172.31.0.100"
+    terraform.vm.provider "virtualbox" do |v|
+      v.name = "terraform"
+      v.memory = 4048
+      v.cpus = 2
+      # Prevent VirtualBox from interfering with host audio stack
+      v.customize ["modifyvm", :id, "--audio", "none"]
+    end
+  end
+
+end

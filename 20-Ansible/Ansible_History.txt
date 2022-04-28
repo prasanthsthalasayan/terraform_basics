@@ -1,0 +1,194 @@
+    1  ls
+    2  cd 20-Ansible/
+    3  ls
+    4  mkdir 01-Inventory
+    5  ls
+    6  cd 01-Inventory/
+    7  ls
+    8  vim inventory
+    9  ls
+   10  apt-get install ansible -y 
+   11  cat /etc/apt/sources.list
+   12  ansible --version 
+   13  cat inventory 
+   14  ansible all -i inventory -m ping -u vagrant -k 
+   15  apt-get install sshpass -y 
+   16  ansible all -i inventory -m ping -u vagrant -k 
+   17  ssh vagrant@172.31.0.100
+   18  cat /root/.ssh/known_hosts 
+   19  ansible all -i inventory -m ping -u vagrant -k 
+   20  ping google.com 
+   21  df -h 
+   22  ansible-doc  -l 
+   23  ansible-doc  command
+   24  df -h 
+   25  ansible all -i inventory -m command -a 'df -h' -u vagrant -k 
+   26  vim inventory 
+   27  ansible all -i inventory -m ping -u vagrant -k 
+   28  ansible all -i inventory -m command -a 'df -h' -u vagrant -k 
+   29  grep -i HOST_KEY_CHECKING /etc/ansible/ansible.cfg 
+   30  cd ..
+   31  ls
+   32  cd ..
+   33  ls
+   34  cd 20-Ansible/
+   35  ls
+   36  history > Ansible_History.txt
+   37  cd ..
+   38  ls
+   39  git add . ; git commit -m "20-Ansible"; git push 
+   40  ls
+   41  cd 20-Ansible/
+   42  ls
+   43  cd 01-Inventory/
+   44  ls
+   45  vim inventory 
+   46  ls
+   47  ansible all -i inventory -m ping -u vagrant -k 
+   48  ansible web -i inventory -m ping -u vagrant -k 
+   49  ansible db -i inventory -m ping -u vagrant -k 
+   50  ansible jboss -i inventory -m ping -u vagrant -k 
+   51  ls
+   52  vim inventory 
+   53  ansible dc -i inventory -m ping -u vagrant -k 
+   54  vim inventory 
+   55  ls
+   56  ansible dc -i inventory -m ping 
+   57  ansible jboss -i inventory -m ping 
+   58  vim inventory 
+   59  ansible jboss -i inventory -m ping 
+   60  vim inventory 
+   61  ansible web -i inventory -m ping 
+   62  vim inventory 
+   63  ansible web -i inventory -m ping 
+   64  vim inventory 
+   65  cd ..
+   66  git add . ; git commit -m "20-Ansible"; git push 
+   67  ls
+   68  cd 20-Ansible/
+   69  ls
+   70  mkdir 01-Inventory 02-Playbook 
+   71  cp -rf  01-Inventory 02-Playbook 
+   72  ls
+   73  cd 02-Playbook/
+   74  ls
+   75  vim playbook.yaml
+   76  ls
+   77  mv 01-Inventory/inventory .
+   78  rm -rf 01-Inventory/
+   79  ls
+   80  ansible-playbook  -i inventory playbook.yaml 
+   81  cat inventory 
+   82  ls
+   83  vim playbook.yaml 
+   84  ansible-playbook  -i inventory playbook.yaml 
+   85  systemctl status  apache2 
+   86  systemctl stop  apache2 
+   87  ansible-playbook  -i inventory playbook.yaml 
+   88  ls
+   89  cd ..
+   90  ls
+   91  history > Ansible_History.txt 
+   92  ls
+   93  cd ..
+   94  ls
+   95  git add . ; git commit -m "20-Ansible"; git push 
+   96  ls
+   97  cd 20-Ansible/
+   98  ls
+   99  cd 02-Playbook/
+  100  s
+  101  ls
+  102  cat playbook.yaml 
+  103  ls
+  104  vim ansible.cfg
+  105  grep -i Checking /etc/ansible/ansible.cfg 
+  106  grep -i host_key_checking /etc/ansible/ansible.cfg 
+  107  grep -i host_key_checking /etc/ansible/ansible.cfg  >> ansible.cfg 
+  108  grep -i inventory /etc/ansible/ansible.cfg  
+  109  grep -i inventory /etc/ansible/ansible.cfg  >> ansible.cfg 
+  110  grep -i log /etc/ansible/ansible.cfg 
+  111  grep -i log_path /etc/ansible/ansible.cfg 
+  112  grep -i log_path /etc/ansible/ansible.cfg  >> ansible.cfg 
+  113  grep -i privil /etc/ansible/ansible.cfg 
+  114  grep -A10 privilege_escalation /etc/ansible/ansible.cfg 
+  115  grep -A5 privilege_escalation /etc/ansible/ansible.cfg 
+  116  grep -A5 privilege_escalation /etc/ansible/ansible.cfg  >> ansible.cfg 
+  117  ls
+  118  vim ansible.cfg 
+  119  ls
+  120  vim /etc/ansible/ansible.cfg 
+  121  ls
+  122  vim playbook.yaml 
+  123  ls
+  124  ansible-playbook playbook.yaml 
+  125  cat ansible.cfg 
+  126  ls
+  127  mv inventory hosts
+  128  ansible-playbook playbook.yaml 
+  129  systemctl stop apache2
+  130  ansible-playbook playbook.yaml 
+  131  ls
+  132  mkdir files
+  133  ls
+  134  vim files/index.html
+  135  ls
+  136  vim playbook.yaml 
+  137  ls
+  138  ansible-playbook playbook.yaml 
+  139  vim files/index.html 
+  140  ansible-playbook playbook.yaml 
+  141  ls
+  142  md5sum hosts 
+  143  cd ..
+  144* 
+  145  cd ..
+  146  ls
+  147  grep -i md5 * 
+  148  grep -ir md5 * 
+  149  cd 12-Functions/
+  150  ls
+  151  vi functions.tf 
+  152  ls
+  153  cd 
+  154  cd - 
+  155  cd ..
+  156  ls
+  157  cd 20-Ansible/
+  158  ls
+  159  cd 02-Playbook/
+  160  ls
+  161  vim files/index.html 
+  162  ls
+  163  ansible-playbook playbook.yaml -vvv
+  164  ls
+  165  mkdir templates
+  166  ls
+  167  vim templates/info.j2
+  168  sl
+  169  ls
+  170  vim playbook.yaml 
+  171  ansible-playbook playbook.yaml 
+  172  vim playbook.yaml 
+  173  ansible-playbook playbook.yaml 
+  174  cat hosts 
+  175  ip addr 
+  176  ansible 172.31.0.100 -i hosts -m setup 
+  177  ls
+  178  vim templates/info.j2 
+  179  ansible-playbook playbook.yaml 
+  180  ls
+  181  vim playbook.yaml 
+  182  ansible-playbook playbook.yaml 
+  183  cat templates/info.j2 
+  184  vim playbook.yaml 
+  185  ansible-playbook playbook.yaml 
+  186  ls
+  187  cd ..
+  188  ls
+  189  cd ..
+  190  ls
+  191  git add . ; git commit -m "20-Ansible"; git push 
+  192  cd 20-Ansible/
+  193  ls
+  194  history > Ansible_History.txt 

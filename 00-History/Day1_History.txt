@@ -1,0 +1,191 @@
+    1  ls
+    2  cd terraform-mindtree-10July2021/
+    3  ls
+    4  cd 00-Install-Terraform/
+    5  ls
+    6  cd ..
+    7  ls
+    8  git pull 
+    9  ls
+   10  cat README.md 
+   11  git pull 
+   12  cat README.md 
+   13  ls
+   14  cd 00-Install-Terraform/
+   15  ls
+   16  ./terraform-bootstrap.sh 
+   17  terraform --version 
+   18  ls
+   19  cp -rf terraform-bootstrap.sh terraform-bootstrap-latest.sh
+   20  ls
+   21  vim terraform-bootstrap-latest.sh 
+   22  ls
+   23  ./terraform-bootstrap-latest.sh 
+   24  cd 
+   25  ls
+   26  rm -rf terraform_0.12* 
+   27  ls
+   28  unzip terraform_0.15.5_linux_amd64.zip 
+   29  mv terraform /usr/bin/terraform-15
+   30  chmod -x /usr/bin/terraform-15
+   31  ls
+   32  terraform --version 
+   33  terraform-15 --version 
+   34  chmod +x /usr/bin/terraform-15
+   35  terraform-15 --version 
+   36  ls
+   37  rm -rf terraform_0.15.5_linux_amd64.zip 
+   38  ls
+   39  wget https://releases.hashicorp.com/terraform/1.0.2/terraform_1.0.2_linux_amd64.zip
+   40  ls
+   41  cd terraform-mindtree-10July2021/00-Install-Terraform/
+   42  ls
+   43  rm -rf terraform-bootstrap-latest.sh 
+   44  ls
+   45  cd ..
+   46  ls
+   47  cd ..
+   48  ls
+   49  unzip terraform_1.0.2_linux_amd64.zip 
+   50  cp -rf terraform /usr/bin/terraform-v1
+   51  chmod +x /usr/bin/terraform-v1
+   52  ls
+   53  mkdir old 
+   54  mv terraform terraform_1.0.2_linux_amd64.zip old
+   55  ls
+   56  terraform-v1 --version 
+   57  ls
+   58  cd terraform-mindtree-10July2021/
+   59  git pull 
+   60  ls
+   61  cd 01-First-Deployment/
+   62  ls
+   63  cat first_deployment.tf 
+   64  ls
+   65  cd ..
+   66  ls
+   67  cd 00-
+   68  cd 00-Install-Terraform/
+   69  ls
+   70  vim README.md
+   71  ls
+   72  cd ..
+   73  ls
+   74  cd 
+   75  ls
+   76  vim .bashrc 
+   77  lsl
+   78  ls
+   79  source .bashrc 
+   80  set | grep -i AWS 
+   81  ls
+   82  cd terraform-mindtree-10July2021/
+   83  ls
+   84  cd 01-First-Deployment/
+   85  ls
+   86  vim first_deployment.tf 
+   87  ls
+   88  terraform init 
+   89  ls -a 
+   90  ls -R .terraform/
+   91  ls
+   92  terraform apply 
+   93  ks
+   94  ls
+   95  terraform show
+   96  terraform destroy 
+   97  ls
+   98  cd ..
+   99  ls
+  100  history 
+  101  vim 01-First-Deployment/first_deployment.tf 
+  102  ls
+  103  history > Day1_History.txt
+  104  ls
+  105  cat Day1_History.txt 
+  106  vim Day1_History.txt 
+  107  ls
+  108  cd 
+  109  cat .bashrc 
+  110  ls
+  111  cp -rf terraform-mindtree-10July2021 my-repo
+  112  ls
+  113  cd cd terraform-mindtree-10July2021/
+  114  cd terraform-mindtree-10July2021/
+  115  l
+  116  git pull 
+  117  ld
+  118  ls
+  119  cd ..
+  120  ls
+  121  cd my-repo/
+  122  ls
+  123  rm -rf 01-First-Deployment/
+  124  ls
+  125  cp -rf ../terraform-mindtree-10July2021/01-First-Deployment . 
+  126  ls
+  127  cd 01-First-Deployment/ls
+  128  ls
+  129  cd 01-First-Deployment/
+  130  ls
+  131  vim first_deployment.tf 
+  132  ls
+  133  terraform-v1 init 
+  134  terraform-v1 apply 
+  135  terraform-v1 show
+  136  terraform-v1 destroy --auto-approve
+  137  ls
+  138  cd ..
+  139  ls
+  140  cd 
+  141  ls
+  142  cd terraform-mindtree-10July2021/
+  143  ls
+  144  ls -a 
+  145  cat .gitignore 
+  146  ls
+  147  cd 02-CLI-Excutions/
+  148  ls
+  149  rm -rf build-plan destroy-plan 
+  150  ls
+  151  cp -rf ../01-First-Deployment/first_deployment.tf . 
+  152  ls
+  153  cat first_deployment.tf 
+  154  ls
+  155  terraform validate
+  156  ls
+  157  cp -rf ../01-First-Deployment/.terraform . 
+  158  du -sh .terraform
+  159  terraform validate
+  160  terraform plan 
+  161  vim first_deployment.tf 
+  162  terraform plan 
+  163  terraform plan -out build-plan
+  164  ls
+  165  terraform show build-plan 
+  166  ls -ltr 
+  167  file build-plan 
+  168  cat build-plan 
+  169  xterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256color
+  170  ls -ltr 
+  171  terraform apply build-plan 
+  172  ls
+  173  terraform plan -destroy -out destroy-plan
+  174  ls
+  175  terraform apply destroy-plan 
+  176  terraform show destroy-plan 
+  177  terraform apply build-plan 
+  178  terraform plan -destroy -out destroy-plan
+  179  terraform show destroy-plan 
+  180  ls
+  181  terraform show 
+  182  terraform refresh
+  183  terraform show 
+  184  cat first_deployment.tf 
+  185  terraform apply 
+  186  terraform apply --auto-approve
+  187  terraform destroy --auto-approve
+  188  ls
+  189  cd ..
+  190  ls
+  191  history > Day1_History.txt 

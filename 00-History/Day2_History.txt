@@ -1,0 +1,40 @@
+    1  ls
+    2  cd terraform-mindtree-10July2021/06-Variables/
+    3  ls
+    4  cd exp2/
+    5  ls
+    6  vim main.tf 
+    7  ls
+    8  vim varibales.tf 
+    9  ls
+   10  vim amit-example.tfvars 
+   11  ls
+   12  vim main.tf 
+   13  ls
+   14  vim varibales.tf 
+   15  ls
+   16  mv ../exp1/.terraform . 
+   17  ls
+   18  terraform plan 
+   19  ls
+   20  rm -rf terraform.tfvars.old
+   21  ls
+   22  vim amit-example.tfvars 
+   23  ls
+   24  terraform plan 
+   25  terraform plan -var-file=amit-example.tfvars 
+   26  ls
+   27  vim amit-example.tfvars 
+   28  terraform plan -var-file=amit-example.tfvars 
+   29  ls
+   30  mv varibales.tf amit-var.tf 
+   31  ls
+   32  vim amit-var.tf 
+   33  ls
+   34  mv amit-var.tf variables.tf 
+   35  ls
+   36  cd ..
+   37  ls
+   38  cd ..
+   39  ls
+   40  history > Day2_History.txt
